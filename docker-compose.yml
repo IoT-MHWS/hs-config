@@ -1,0 +1,16 @@
+services:
+  eureka:
+    image: ${HS_EUREKA_IMAGE:-mhws/hs-eureka:latest}
+    ports:
+      - ${HS_EUREKA_PORT:-8761}:8761
+
+  config:
+    build:
+      context: .
+      dockerfile: dockerfile
+    ports:
+      - ${HS_CONFIG_PORT:-8888}:8888
+    environment:
+      HS_CONFIG_SEARCH_LOCATIONS: file:/var/hs/config
+    volumes:
+      - "./config:/var/hs/config"
