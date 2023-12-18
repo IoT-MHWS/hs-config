@@ -1,9 +1,4 @@
 services:
-  eureka:
-    image: ${HS_EUREKA_IMAGE:-mhws/hs-eureka:latest}
-    ports:
-      - ${HS_EUREKA_PORT:-8761}:8761
-
   config:
     build:
       context: .

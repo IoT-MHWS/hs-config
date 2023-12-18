@@ -2,12 +2,9 @@ server:
   port: 8763
 
 eureka:
-  instance:
-    appname: user
-
   client:
     service-url:
-      defaultZone: ${HS_USER_EUREKA_URI:http://localhost:8761/eureka} # resolves on config server to default value
+      defaultZone: ${HS_USER_EUREKA_URI:localhost:8654}
 
 spring:
   datasource:
